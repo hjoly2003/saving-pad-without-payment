@@ -2,6 +2,7 @@
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+.history/**
 
 # Node files
 node_modules/
