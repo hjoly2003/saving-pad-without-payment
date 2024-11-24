@@ -1,0 +1,21 @@
+# Ignore build output
+build/
+dist/
+server/target
+
+# Ignore node_modules
+node_modules/
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+.history/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp

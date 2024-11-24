@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Saving a PAD sample</title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+        <form id="payment-form" class="sr-payment-form pad" method="post">
+          <div class="sr-form-row">
+            <label>
+              Account details
+            </label>
+            <input type="text" id="accountholder-name" placeholder="Account holder name" />
+            <input type="text" id="email" placeholder="Email address" />
+          </div>
+          <div class="sr-field-error" id="pad-errors" role="alert"></div>
+          <button id="submit-button">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Link your bank account to your customer account</span>
+          </button>
+        </form>
+        <div class="sr-result hidden">
+          <p>Payment setup completed<br /></p>
+          <pre>
+            <code></code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

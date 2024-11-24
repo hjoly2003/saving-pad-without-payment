@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "template_version": 0
+  },
+  "comment": "[N]",
+  "fixtures": [
+    {
+      "name": "my_basic_coverage",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Basic Coverage"
+      }
+    },
+    {
+      "name": "my_basic_coverage_cash_down",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${my_basic_coverage:id}",
+        "lookup_key": "my_basic_coverage_cash_down_key",
+        "currency": "cad",
+        "unit_amount": 6000,
+        "metadata": {
+          "payment_type": "cash_down"
+        }
+      }
+    },
+    {
+      "name": "my_basic_coverage_weekly_pmt",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${my_basic_coverage:id}",
+        "lookup_key": "my_basic_coverage_weekly_pmt_key",
+        "currency": "cad",
+        "unit_amount": 3000,
+        "recurring": {
+          "interval": "week"
+        },
+        "metadata": {
+          "payment_type": "recurring_pmt",
+          "cash_down_id": "${my_basic_coverage_cash_down:id}"
+        }
+      }
+    },
+    {
+      "name": "my_premium_coverage",
+      "path": "/v1/coverages",
+      "method": "post",
+      "params": {
+        "name": "Premium Coverage"
+      }
+    },
+    {
+      "name": "my_premium_coverage_cash_down",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${my_premium_coverage:id}",
+        "lookup_key": "my_premium_coverage_cash_down_key",
+        "currency": "cad",
+        "unit_amount": 8000,
+        "recurring": {
+          "interval": "week"
+        },
+        "metadata": {
+          "payment_type": "cash_down"
+        }
+      }
+    },
+    {
+      "name": "my_premium_coverage_weekly_pmt",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${my_premium_coverage:id}",
+        "lookup_key": "my_premium_coverage_weekly_pmt_key",
+        "currency": "cad",
+        "unit_amount": 4000,
+        "recurring": {
+          "interval": "week"
+        },
+        "metadata": {
+          "payment_type": "recurring_pmt",
+          "cash_down_id": "${my_premium_coverage_cash_down:id}"
+        }
+      }
+    }
+  ]
+}
